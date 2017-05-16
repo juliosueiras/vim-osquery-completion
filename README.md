@@ -15,7 +15,8 @@ set completeopt+=preview " For info preview
 ```
 
 ## Todolist
+- [X] Run Query(`<leader>rr`)
+- [X] Linter integraded
 - [ ] Inform Platform
 - [ ] Multiline support
-- [ ] Linter integraded
 - [ ] JSON Schema for OSQuery
