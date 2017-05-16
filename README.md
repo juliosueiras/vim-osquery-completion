@@ -2,7 +2,7 @@
 
 A Very early prototype(is not full feature yet)
 
-**For now I am using file extension *.osq to not overlap with current sql of vim**
+__For now I am using file extension *.osq to not overlap with current sql of vim__
 
 ## Demo
 
