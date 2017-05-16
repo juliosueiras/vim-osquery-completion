@@ -1,0 +1,1 @@
+set omnifunc=osquery#complete
