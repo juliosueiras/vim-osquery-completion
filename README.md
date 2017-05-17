@@ -12,6 +12,9 @@ __For now I am using file extension *.osq to not overlap with current sql of vim
 ```vim
 set completeopt+=preview " For info preview
 
+" (Optional, default to all) Enable which categories to complete
+let g:osquery_complete_types = ['specs', 'windows', 'posix', 'linux', 'darwin', 'utility' ]
+
 ```
 
 ## Todolist

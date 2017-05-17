@@ -31,7 +31,6 @@ fun! osquery#complete(findstart, base)
     endwhile
     return start
   else
-      try
           let a:line = strpart(getline('.'),0, getpos('.')[2])
 
           let res = []
@@ -39,23 +38,24 @@ fun! osquery#complete(findstart, base)
           require 'json'
 
           test = JSON.parse(File.read("#{VIM::evaluate('s:path')}/../datas/complete.json"))
+          data = []
+          VIM::evaluate("g:osquery_complete_types").each do |type|
+            data.concat(test.find_all { |i| i['type'] == type })
+          end
 
           test2 = VIM::evaluate('a:line')
 
           if test2[/\s*SELECT(?!.*FROM)/]
-              test.each do |i| 
+              data.each do |i| 
               if i['word'] == VIM::evaluate("getline('.')").match(/FROM\s*([^ ;]*);?/)[1]
                   VIM::command("let res = #{JSON.generate(i['columns'])}")
                   break
               end
           end
       else
-          VIM::command("let res = #{JSON.generate(test)}")
+          VIM::command("let res = #{JSON.generate(data)}")
       end
 EOF
       return res
-  catch
-      return []
-  endtry
   end
 endfun
