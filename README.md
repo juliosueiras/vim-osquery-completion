@@ -9,6 +9,8 @@ __For now I am using file extension *.osq to not overlap with current sql of vim
 [![asciicast](https://asciinema.org/a/120744.png)](https://asciinema.org/a/120744)
 
 
+## Instruction
+- For AutoCompletion , open a file that end with *.osq(this is just a temp solution), and  type Ctrl-X, and Ctrl-O after `FROM` for table completion , and move to `SELECT ^ FROM table_name` for column completion(^ being your cursor)
 ```vim
 set completeopt+=preview " For info preview
 
